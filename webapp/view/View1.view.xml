@@ -1,0 +1,217 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="project1.controller.View1"
+    displayBlock="true"
+>
+    <Page
+        id="page"
+        title="Slide Deck Migration Tool"
+    >
+        <content>
+            <Wizard
+                id="migrationWizard"
+                showNextButton="false"
+            >
+                <!-- Step 1: Introduction -->
+                <WizardStep
+                    id="introStep"
+                    title="Introduction"
+                    validated="true"
+                >
+                    <VBox id="_IDGenVBox1">
+                        <Text
+                            id="_IDGenText1"
+                            text="This wizard will guide you through the process of converting your existing slide deck to the new SAP-compliant template and give an extensive report. The process is simple and should only take a few minutes."
+                        />
+                        <Text
+                            id="_IDGenText2"
+                            text="1. You will upload your current slide deck."
+                        />
+                        <Text
+                            id="_IDGenText3"
+                            text="2. Choose the new template."
+                        />
+                        <Text
+                            id="_IDGenText4"
+                            text="3. Customize the conversion settings."
+                        />
+                        <Text
+                            id="_IDGenText5"
+                            text="4. Preview the results before finalizing."
+                        />
+                        <Text
+                            id="_IDGenText6"
+                            text="5. Finally download your SAP-compliant slide deck."
+                        />
+                        <Text
+                            id="_IDGenText7"
+                            text="Note: Ensure that your slide deck is compatible with PowerPoint format (PPTX, PowerPoint 2007 and later)."
+                        />
+                    </VBox>
+                </WizardStep>
+
+                <!-- Step 2: Upload -->
+                <WizardStep
+                    id="uploadStep"
+                    title="Upload"
+                    validated="false"
+                >
+                    <VBox id="_IDGenVBox3">
+                        <Text
+                            id="_IDGenText8"
+                            text="Instructions: Please upload the slide deck you want to migrate. The tool accepts PowerPoint format (PPTX, PowerPoint 2007 and later)."
+                        />
+
+                        <HBox
+                            id="_IDGenHBox1"
+                            justifyContent="SpaceBetween"
+                            alignItems="Center"
+                        >
+                            <Text
+                                id="attachmentText"
+                                text="Attachments (0)"
+                            />
+                            <Button
+                                id="_IDGenButton1"
+                                text="Upload"
+                                press="onUploadPress"
+                            />
+                        </HBox>
+
+                        <VBox
+                            id="fileContainer"
+                            class="sapUiSmallMarginTop"
+                        >
+                            <!-- Display uploaded file name here -->
+                        </VBox>
+                    </VBox>
+                </WizardStep>
+
+                <!-- Step 3: Template -->
+                <WizardStep
+                    id="selectTemplateStep"
+                    title="Template"
+                    validated="false"
+                >
+                    <VBox id="_IDGenVBox4">
+                        <Text
+                            id="_IDGenText9"
+                            text="Select a new template for your slide deck."
+                        />
+                        <HBox
+                            id="TileButtons"
+                            alignItems="Center"
+                            class="sapUiSmallMarginTop"
+                            justifyContent="SpaceAround"
+                        >
+                            <StandardTile
+                                id="tile1"
+                                title="SAP BTP"
+                                info="SAP BTP"
+                                icon="sap-icon://business-objects-experience"
+                                press="onTilePress"
+                                class="tile"
+                            />
+                            <StandardTile
+                                id="tile2"
+                                title="S/4HANA"
+                                info="S/4HANA"
+                                icon="sap-icon://home"
+                                press="onTilePress"
+                                class="tile"
+                            />
+                            <StandardTile
+                                id="tile3"
+                                title="SAP AI Core"
+                                info="SAP AI Launchpad"
+                                icon="sap-icon://disconnected"
+                                press="onTilePress"
+                                class="tile"
+                            />
+                            <StandardTile
+                                id="tile4"
+                                title="Custom"
+                                info="Test"
+                                icon="sap-icon://settings"
+                                press="onTilePress"
+                                class="tile"
+                            />
+                        </HBox>
+                    </VBox>
+                </WizardStep>
+
+                <!-- Step 4: Preview -->
+                <WizardStep
+                    id="previewStep"
+                    title="Preview"
+                    validated="false"
+                >
+                    <VBox id="_IDGenVBox5">
+                        <Text
+                            id="_IDGenText10"
+                            text="Preview your slide deck with the new template."
+                        />
+                        
+                    </VBox>
+                </WizardStep>
+
+
+                <!-- Step 5: Download -->
+                <WizardStep
+                    id="finalizeStep"
+                    title="Download"
+                    validated="false"
+                >
+                    <VBox id="_IDGenVBox6">
+                        <Text
+                            id="_IDGenText11"
+                            text="Finalize and download your SAP-compliant slide deck."
+                        />
+                        <!-- Add finalization content here -->
+                    </VBox>
+                </WizardStep>
+            </Wizard>
+
+            <!-- Navigation Buttons -->
+            <VBox id="_IDGenVBox7"
+                    alignItems = "End"
+                >
+                    <Button
+                    id="startButton"
+                    text="Start Migration"
+                    type="Emphasized"
+                    press="onStartPress"
+                />
+                </VBox>
+            <HBox
+                id="navButtons"
+                justifyContent="SpaceBetween"
+                alignItems="Center"
+                class="sapUiSmallMarginTop"
+            >
+                
+                <Button
+                    id="backButton"
+                    text="Back"
+                    press="onBackPress"
+                />
+                <Button
+                    id="nextButton"
+                    text="Next"
+                    type="Emphasized"
+                    press="onNextPress"
+                />
+                <Button
+                    id="finishButton"
+                    text="Finish"
+                    type="Emphasized"
+                    press="onFinishPress"
+                />
+                
+                
+            </HBox>
+            
+        </content>
+    </Page>
+</mvc:View>

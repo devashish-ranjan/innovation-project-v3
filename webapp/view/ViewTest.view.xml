@@ -1,0 +1,7 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project1.controller.ViewTest" displayBlock="true">
+    <Page id="page" title="Slide Deck Migration Tool">
+    <content>
+        <StandardTile title="Title" info="Info" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="123" numberUnit="eur" infoState="Success" id="tile10"/>
+    </content>
+    </Page>
+</mvc:View>
