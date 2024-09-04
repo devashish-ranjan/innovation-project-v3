@@ -1,7 +1,16 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project1.controller.ViewTest" displayBlock="true">
     <Page id="page" title="Slide Deck Migration Tool">
     <content>
-        <StandardTile title="Title" info="Info" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="123" numberUnit="eur" infoState="Success" id="tile10"/>
+        <StandardTile title="Title" info="Info" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="123" numberUnit="eur" infoState="Success" id="tile10"/><TileContainer editable="true" allowAdd="true" id="container0">
+            <tiles>
+                <StandardTile title="Title 1" info="Info" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="123" numberUnit="eur" infoState="Success" id="tile0"/>
+                <StandardTile title="Title 2" info="Info" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="123" numberUnit="eur" infoState="Success" id="tile1"/></tiles>
+        </TileContainer>
+        <CustomTile id="tile5">
+            <content>
+                <Image width="140px" height="140px" id="image1"/>
+            </content>
+        </CustomTile>
     </content>
     </Page>
 </mvc:View>
