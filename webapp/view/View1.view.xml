@@ -1,4 +1,5 @@
 <mvc:View
+    xmlns:upload="sap.m.upload"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     controllerName="project1.controller.View1"
@@ -12,6 +13,7 @@
             <Wizard
                 id="migrationWizard"
                 showNextButton="false"
+                renderMode="Page"
             >
                 <!-- Step 1: Introduction -->
                 <WizardStep
@@ -19,38 +21,8 @@
                     title="Introduction"
                     validated="true"
                 >
-                    <VBox id="_IDGenVBox1">
-                        <Text
-                            id="_IDGenText1"
-                            text="This wizard will guide you through the process of converting your existing slide deck to the new SAP-compliant template and give an extensive report. The process is simple and should only take a few minutes."
-                        />
-                        <Text
-                            id="_IDGenText2"
-                            text="1. You will upload your current slide deck."
-                        />
-                        <Text
-                            id="_IDGenText3"
-                            text="2. Choose the new template."
-                        />
-                        <Text
-                            id="_IDGenText4"
-                            text="3. Customize the conversion settings."
-                        />
-                        <Text
-                            id="_IDGenText5"
-                            text="4. Preview the results before finalizing."
-                        />
-                        <Text
-                            id="_IDGenText6"
-                            text="5. Finally download your SAP-compliant slide deck."
-                        />
-                        <Text
-                            id="_IDGenText7"
-                            text="Note: Ensure that your slide deck is compatible with PowerPoint format (PPTX, PowerPoint 2007 and later)."
-                        />
-                    </VBox>
+                    <FormattedText htmlText="{/Slide1}" />
                 </WizardStep>
-
                 <!-- Step 2: Upload -->
                 <WizardStep
                     id="uploadStep"
@@ -58,11 +30,7 @@
                     validated="false"
                 >
                     <VBox id="_IDGenVBox3">
-                        <Text
-                            id="_IDGenText8"
-                            text="Instructions: Please upload the slide deck you want to migrate. The tool accepts PowerPoint format (PPTX, PowerPoint 2007 and later)."
-                        />
-
+                        <FormattedText htmlText="{/Slide2}" />
                         <HBox
                             id="_IDGenHBox1"
                             justifyContent="SpaceBetween"
@@ -78,7 +46,17 @@
                                 press="onUploadPress"
                             />
                         </HBox>
-
+                        <VBox id="_IDGenVBox">
+                            <upload:UploadSet
+                                id="UploadSet"
+                                fileTypes="pptx"
+                                maxFileSize="10000"
+                                uploadCompleted="onUploadComplete"
+                                selectionChanged="onSelectionChange"
+                                mode="SingleSelect"
+                                uploadUrl="upload"
+                            />
+                        </VBox>
                         <VBox
                             id="fileContainer"
                             class="sapUiSmallMarginTop"
@@ -87,13 +65,31 @@
                         </VBox>
                     </VBox>
                 </WizardStep>
-
                 <!-- Step 3: Template -->
                 <WizardStep
                     id="selectTemplateStep"
                     title="Template"
                     validated="false"
                 >
+                    <Image
+                        id="_IDGenImage"
+                        activeSrc="empty string"
+                        alt=""
+                        ariaHasPopup="None"
+                        backgroundPosition="initial"
+                        backgroundRepeat="no-repeat"
+                        backgroundSize="cover"
+                        decorative="true"
+                        densityAware="false"
+                        height=""
+                        lazyLoading="false"
+                        mode="Image"
+                        src="assets/test.png"
+                        useMap=""
+                        width=""
+                    >
+                        <detailBox />
+                    </Image>
                     <VBox id="_IDGenVBox4">
                         <Text
                             id="_IDGenText9"
@@ -138,9 +134,86 @@
                                 class="tile"
                             />
                         </HBox>
+                        <HBox
+                            id="SlideTileContainer"
+                            allowWrapping="true"
+                            class="sapUiTinyMarginTopBottom"
+                        >
+                            <SlideTile
+                                id="_IDGenSlideTile"
+                                displayTime="5000"
+                                height=""
+                                scope="Display"
+                                sizeBehavior="Responsive"
+                                transitionTime="500"
+                                width=""
+                            >
+                                <tiles />
+                            </SlideTile>
+                            <SlideTile
+                                id="slideTile1"
+                                tiles="{/slideTile1}"
+                                scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
+                                tooltip="SlideTile 1"
+                                press="pressSlideTile"
+                                class="sapUiTinyMarginEnd"
+                                sizeBehavior="{/sizeBehavior}"
+                            >
+                                <GenericTile
+                                    id="tile6"
+                                    backgroundImage="{backgroundImage}"
+                                    state="{=${state} || 'Loaded'}"
+                                    tooltip="{tooltip}"
+                                    frameType="TwoByOne"
+                                    press="press"
+                                    sizeBehavior="{/sizeBehavior}"
+                                >
+                                    <TileContent
+                                        id="_IDGenTileContent"
+                                        footer="{footer}"
+                                    >
+                                        <NewsContent
+                                            id="_IDGenNewsContent"
+                                            contentText="{contentText}"
+                                            subheader="{subtitle}"
+                                        />
+                                    </TileContent>
+                                </GenericTile>
+                            </SlideTile>
+                            <SlideTile
+                                id="slideTile2"
+                                tiles="{/slideTile2}"
+                                scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
+                                tooltip="SlideTile 2"
+                                press="pressSlideTile"
+                                transitionTime="250"
+                                displayTime="2500"
+                                sizeBehavior="{/sizeBehavior}"
+                            >
+                                <GenericTile
+                                    id="tile7"
+                                    backgroundImage="{backgroundImage}"
+                                    state="{=${state} || 'Loaded'}"
+                                    tooltip="{tooltip}"
+                                    frameType="TwoByOne"
+                                    press="press"
+                                    sizeBehavior="{/sizeBehavior}"
+                                >
+                                    <TileContent
+                                        id="_IDGenTileContent1"
+                                        footer="{footer}"
+                                    >
+                                        <NewsContent
+                                            id="_IDGenNewsContent1"
+                                            contentText="{contentText}"
+                                            subheader="{subtitle}"
+                                        />
+                                    </TileContent>
+                                </GenericTile>
+                            </SlideTile>
+                        </HBox>
                     </VBox>
                 </WizardStep>
-
                 <!-- Step 4: Preview -->
                 <WizardStep
                     id="previewStep"
@@ -148,15 +221,33 @@
                     validated="false"
                 >
                     <VBox id="_IDGenVBox5">
-                        <Text
-                            id="_IDGenText10"
-                            text="Preview your slide deck with the new template."
-                        />
-                        
+                        <FlexBox
+                            id="_IDGenFlexBox"
+                            direction="Column"
+                            renderType="Div"
+                            class="sapUiSmallMargin"
+                        >
+                            <FormattedText htmlText="{/Slide4}" />
+
+                            <PDFViewer
+                                id="_IDGenPDFViewer"
+                                source="https://port8080-workspaces-ws-zvkv2.us10.trial.applicationstudio.cloud.sap/upload/Envases_Assessment.pdf"
+                                isTrustedSource="true"
+                                height="800px"
+                                width="100%"
+                                showDownloadButton="false"
+                            >
+                                <errorPlaceholder />
+                                <layoutData>
+                                    <FlexItemData
+                                        id="_IDGenFlexItemData"
+                                        growFactor="1"
+                                    />
+                                </layoutData>
+                            </PDFViewer>
+                        </FlexBox>
                     </VBox>
                 </WizardStep>
-
-
                 <!-- Step 5: Download -->
                 <WizardStep
                     id="finalizeStep"
@@ -164,33 +255,80 @@
                     validated="false"
                 >
                     <VBox id="_IDGenVBox6">
-                        <Text
-                            id="_IDGenText11"
-                            text="Finalize and download your SAP-compliant slide deck."
-                        />
+                        <FormattedText htmlText="{/Slide5}" />
                         <!-- Add finalization content here -->
                     </VBox>
+                    <upload:UploadSet
+                        id="UploadSetNew"
+                        instantUpload="true"
+                        showIcons="true"
+                        uploadEnabled="true"
+                        terminationEnabled="true"
+                        fileTypes="txt,doc,png"
+                        maxFileNameLength="30"
+                        maxFileSize="200"
+                        mediaTypes="text/plain,application/msword,image/png"
+                        uploadUrl="../../../../upload"
+                        items="{path: '/items', templateShareable: false}"
+                        mode="MultiSelect"
+                        selectionChanged="onSelectionChange"
+                        directory="true"
+                    >
+                        <upload:items>
+                            <upload:UploadSetItem
+                                fileName="{fileName}"
+                                mediaType="{mediaType}"
+                                url="{url}"
+                                thumbnailUrl="{thumbnailUrl}"
+                                attributes="{path: 'attributes', templateShareable: false}"
+                                statuses="{path: 'statuses', templateShareable: false}"
+                                uploadState="{uploadState}"
+                            >
+                                <upload:attributes>
+                                    <ObjectAttribute
+                                        title="{title}"
+                                        text="{text}"
+                                        active="{active}"
+                                    />
+                                </upload:attributes>
+                                <upload:markers>
+                                    <ObjectMarker
+                                        type="{type}"
+                                        visibility="{visibility}"
+                                    />
+                                </upload:markers>
+                                <upload:statuses>
+                                    <ObjectStatus
+                                        title="{title}"
+                                        text="{text}"
+                                        state="{state}"
+                                        icon="{icon}"
+                                        active="{active}"
+                                    />
+                                </upload:statuses>
+                            </upload:UploadSetItem>
+                        </upload:items>
+                    </upload:UploadSet>
                 </WizardStep>
             </Wizard>
-
             <!-- Navigation Buttons -->
-            <VBox id="_IDGenVBox7"
-                    alignItems = "End"
-                >
-                    <Button
+            <VBox
+                id="_IDGenVBox7"
+                alignItems="End"
+            >
+                <Button
                     id="startButton"
                     text="Start Migration"
                     type="Emphasized"
                     press="onStartPress"
                 />
-                </VBox>
+            </VBox>
             <HBox
                 id="navButtons"
                 justifyContent="SpaceBetween"
                 alignItems="Center"
                 class="sapUiSmallMarginTop"
             >
-                
                 <Button
                     id="backButton"
                     text="Back"
@@ -208,10 +346,7 @@
                     type="Emphasized"
                     press="onFinishPress"
                 />
-                
-                
             </HBox>
-            
         </content>
     </Page>
 </mvc:View>
