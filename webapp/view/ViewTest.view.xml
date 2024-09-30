@@ -1,7 +1,11 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project1.controller.ViewTest" displayBlock="true">
     <Page id="page" title="Slide Deck Migration Tool">
     <content>
+        <Image id="page.Image" src="/webapp/view/test.png" width="{assets/test.png}"/>
+        <Image width="140px" height="140px" id="image0" src="assets/test.png"/>
+        <GenericTile header="Header" subheader="Sub Header" id="tile0"/>
         <StandardTile title="Title" info="Info" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="123" numberUnit="eur" infoState="Success" id="tile10"/>
+        <Image src="https://port8080-workspaces-ws-zvkv2.us10.trial.applicationstudio.cloud.sap/assets/test.png" width="140px" height="140px" id="image0_1725844067573" activeSrc="https://port8080-workspaces-ws-zvkv2.us10.trial.applicationstudio.cloud.sap/assets/test.png"/>
     </content>
     </Page>
 </mvc:View>
