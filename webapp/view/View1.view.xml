@@ -31,21 +31,6 @@
                 >
                     <VBox id="_IDGenVBox3">
                         <FormattedText htmlText="{/Slide2}" />
-                        <HBox
-                            id="_IDGenHBox1"
-                            justifyContent="SpaceBetween"
-                            alignItems="Center"
-                        >
-                            <Text
-                                id="attachmentText"
-                                text="Attachments (0)"
-                            />
-                            <Button
-                                id="_IDGenButton1"
-                                text="Upload"
-                                press="onUploadPress"
-                            />
-                        </HBox>
                         <VBox id="_IDGenVBox">
                             <upload:UploadSet
                                 id="UploadSet"
@@ -71,148 +56,133 @@
                     title="Template"
                     validated="false"
                 >
-                    <Image
-                        id="_IDGenImage"
-                        activeSrc="empty string"
-                        alt=""
-                        ariaHasPopup="None"
-                        backgroundPosition="initial"
-                        backgroundRepeat="no-repeat"
-                        backgroundSize="cover"
-                        decorative="true"
-                        densityAware="false"
-                        height=""
-                        lazyLoading="false"
-                        mode="Image"
-                        src="assets/test.png"
-                        useMap=""
-                        width=""
-                    >
-                        <detailBox />
-                    </Image>
                     <VBox id="_IDGenVBox4">
                         <Text
                             id="_IDGenText9"
                             text="Select a new template for your slide deck."
+                            class="sapUiSmallMarginBottom"
                         />
-                        <HBox
-                            id="TileButtons"
-                            alignItems="Center"
-                            class="sapUiSmallMarginTop"
-                            justifyContent="SpaceAround"
-                        >
-                            <StandardTile
-                                id="tile1"
-                                title="SAP BTP"
-                                info="SAP BTP"
-                                icon="sap-icon://business-objects-experience"
-                                press="onTilePress"
-                                class="tile"
-                            />
-                            <StandardTile
-                                id="tile2"
-                                title="S/4HANA"
-                                info="S/4HANA"
-                                icon="sap-icon://home"
-                                press="onTilePress"
-                                class="tile"
-                            />
-                            <StandardTile
-                                id="tile3"
-                                title="SAP AI Core"
-                                info="SAP AI Launchpad"
-                                icon="sap-icon://disconnected"
-                                press="onTilePress"
-                                class="tile"
-                            />
-                            <StandardTile
-                                id="tile4"
-                                title="Custom"
-                                info="Test"
-                                icon="sap-icon://settings"
-                                press="onTilePress"
-                                class="tile"
-                            />
-                        </HBox>
-                        <HBox
-                            id="SlideTileContainer"
-                            allowWrapping="true"
-                            class="sapUiTinyMarginTopBottom"
-                        >
-                            <SlideTile
-                                id="_IDGenSlideTile"
-                                displayTime="5000"
-                                height=""
-                                scope="Display"
-                                sizeBehavior="Responsive"
-                                transitionTime="500"
-                                width=""
-                            >
-                                <tiles />
-                            </SlideTile>
-                            <SlideTile
-                                id="slideTile1"
-                                tiles="{/slideTile1}"
-                                scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
-                                tooltip="SlideTile 1"
-                                press="pressSlideTile"
-                                class="sapUiTinyMarginEnd"
-                                sizeBehavior="{/sizeBehavior}"
-                            >
-                                <GenericTile
-                                    id="tile6"
-                                    backgroundImage="{backgroundImage}"
-                                    state="{=${state} || 'Loaded'}"
-                                    tooltip="{tooltip}"
-                                    frameType="TwoByOne"
-                                    press="press"
-                                    sizeBehavior="{/sizeBehavior}"
-                                >
-                                    <TileContent
-                                        id="_IDGenTileContent"
-                                        footer="{footer}"
-                                    >
-                                        <NewsContent
-                                            id="_IDGenNewsContent"
-                                            contentText="{contentText}"
-                                            subheader="{subtitle}"
-                                        />
-                                    </TileContent>
-                                </GenericTile>
-                            </SlideTile>
-                            <SlideTile
-                                id="slideTile2"
-                                tiles="{/slideTile2}"
-                                scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
-                                tooltip="SlideTile 2"
-                                press="pressSlideTile"
-                                transitionTime="250"
-                                displayTime="2500"
-                                sizeBehavior="{/sizeBehavior}"
-                            >
-                                <GenericTile
-                                    id="tile7"
-                                    backgroundImage="{backgroundImage}"
-                                    state="{=${state} || 'Loaded'}"
-                                    tooltip="{tooltip}"
-                                    frameType="TwoByOne"
-                                    press="press"
-                                    sizeBehavior="{/sizeBehavior}"
-                                >
-                                    <TileContent
-                                        id="_IDGenTileContent1"
-                                        footer="{footer}"
-                                    >
-                                        <NewsContent
-                                            id="_IDGenNewsContent1"
-                                            contentText="{contentText}"
-                                            subheader="{subtitle}"
-                                        />
-                                    </TileContent>
-                                </GenericTile>
-                            </SlideTile>
-                        </HBox>
                     </VBox>
+                    <SlideTile
+                        id="slideTile1"
+                        tiles="{/slideTile1}"
+                        scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
+                        tooltip="SlideTile 1"
+                        press="pressSlideTile"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        sizeBehavior="{/sizeBehavior}"
+                    >
+                        <GenericTile
+                            id="tile6"
+                            backgroundImage="{backgroundImage}"
+                            state="{=${state} || 'Loaded'}"
+                            tooltip="{tooltip}"
+                            frameType="TwoByOne"
+                            press="press"
+                            sizeBehavior="{/sizeBehavior}"
+                        >
+                            <TileContent
+                                id="_IDGenTileContent"
+                                footer="{footer}"
+                            >
+                                <NewsContent
+                                    id="_IDGenNewsContent"
+                                    contentText="{contentText}"
+                                    subheader="{subtitle}"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                    </SlideTile>
+                    <SlideTile
+                        id="slideTile2"
+                        tiles="{/slideTile2}"
+                        scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
+                        tooltip="SlideTile 2"
+                        press="pressSlideTile"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        sizeBehavior="{/sizeBehavior}"
+                    >
+                        <GenericTile
+                            id="tile7"
+                            backgroundImage="{backgroundImage}"
+                            state="{=${state} || 'Loaded'}"
+                            tooltip="{tooltip}"
+                            frameType="TwoByOne"
+                            press="press"
+                            sizeBehavior="{/sizeBehavior}"
+                        >
+                            <TileContent
+                                id="_IDGenTileContent2"
+                                footer="{footer}"
+                            >
+                                <NewsContent
+                                    id="_IDGenNewsContent2"
+                                    contentText="{contentText}"
+                                    subheader="{subtitle}"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                    </SlideTile>
+                    <SlideTile
+                        id="slideTile3"
+                        tiles="{/slideTile3}"
+                        scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
+                        tooltip="SlideTile 3"
+                        press="pressSlideTile"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        sizeBehavior="{/sizeBehavior}"
+                    >
+                        <GenericTile
+                            id="tile8"
+                            backgroundImage="{backgroundImage}"
+                            state="{=${state} || 'Loaded'}"
+                            tooltip="{tooltip}"
+                            frameType="TwoByOne"
+                            press="press"
+                            sizeBehavior="{/sizeBehavior}"
+                        >
+                            <TileContent
+                                id="_IDGenTileContent3"
+                                footer="{footer}"
+                            >
+                                <NewsContent
+                                    id="_IDGenNewsContent3"
+                                    contentText="{contentText}"
+                                    subheader="{subtitle}"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                    </SlideTile>
+                    <SlideTile
+                        id="slideTile4"
+                        tiles="{/slideTile4}"
+                        scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
+                        tooltip="SlideTile 4"
+                        press="pressSlideTile"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        sizeBehavior="{/sizeBehavior}"
+                    >
+                        <GenericTile
+                            id="tile9"
+                            backgroundImage="{backgroundImage}"
+                            state="{=${state} || 'Loaded'}"
+                            tooltip="{tooltip}"
+                            frameType="TwoByOne"
+                            press="press"
+                            sizeBehavior="{/sizeBehavior}"
+                        >
+                            <TileContent
+                                id="_IDGenTileContent4"
+                                footer="{footer}"
+                            >
+                                <NewsContent
+                                    id="_IDGenNewsContent4"
+                                    contentText="{contentText}"
+                                    subheader="{subtitle}"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                    </SlideTile>
                 </WizardStep>
                 <!-- Step 4: Preview -->
                 <WizardStep

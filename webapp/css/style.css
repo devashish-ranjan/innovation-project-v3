@@ -52,3 +52,15 @@
     cursor: not-allowed; /* Show not-allowed cursor for disabled tiles */
     opacity: 0.5; /* Make disabled tiles look faded */
 }
+
+.sapMST.TwoByOne {
+    width: 22.5rem;
+    height: 16rem;
+}
+
+.sapMGTHdrContent {
+    height: 100%;
+    padding-top: 0rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

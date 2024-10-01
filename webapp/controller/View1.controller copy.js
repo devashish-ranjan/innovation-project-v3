@@ -225,40 +225,40 @@ sap.ui.define([
                 ],
                 slideTile1: [
                     {
-                        "backgroundImage": "https://port8080-workspaces-ws-5bnd8.us10.trial.applicationstudio.cloud.sap/assets/images/slide1.png",
-                        "contentText": "Style 1",
-                        "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
+                        "backgroundImage": "test-resources/sap/m/demokit/sample/GenericTileLineMode/images/NewsImage2.png",
+                        "footer": "August 22, 2016",
+                        "contentText": "SAP Unveils Powerful New Player Comparision Tool Exclusively on NFL.com",
+                        "subtitle": "Today, SAP News",
                         "state": "",
-                        "tooltip": ""
+                        "tooltip": "NewsTile 1 of SlideTile 1"
+                    },
+                    {
+                        "backgroundImage": "test-resources/sap/m/demokit/sample/GenericTileLineMode/images/NewsImage1.png",
+                        "footer": "August 21, 2016",
+                        "contentText": "Wind Map: Monitoring Real-Time and Forecasted Wind Conditions across the Globe",
+                        "subtitle": "Today, SAP News",
+                        "state": "",
+                        "tooltip": "NewsTile 2 of SlideTile 1"
                     }
                 ],
                 slideTile2: [
                     {
-                        "backgroundImage": "https://port8080-workspaces-ws-5bnd8.us10.trial.applicationstudio.cloud.sap/assets/images/slide2.png",
-                        "contentText": "Style 2",
-                        "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
-                        "state": "",
-                        "tooltip": ""
-                    }
-                ],
-                slideTile3: [
+                        "backgroundImage": "test-resources/sap/m/demokit/sample/GenericTileLineMode/images/NewsImage1.png",
+                        "footer": "August 21, 2016",
+                        "contentText": "Wind Map: Monitoring Real-Time and Forecasted Wind Conditions across the Globe",
+                        "subtitle": "Today, SAP News",
+                        "state": "Loading",
+                        "tooltip": "NewsTile 1 of SlideTile 2"
+                    },
                     {
-                        "backgroundImage": "https://port8080-workspaces-ws-5bnd8.us10.trial.applicationstudio.cloud.sap/assets/images/slide3.png",
-                        "contentText": "Style 3",
-                        "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
-                        "state": "",
-                        "tooltip": ""
+                        "backgroundImage": "test-resources/sap/m/demokit/sample/GenericTileLineMode/images/NewsImage2.png",
+                        "footer": "August 22, 2016",
+                        "contentText": "SAP Unveils Powerful New Player Comparision Tool Exclusively on NFL.com",
+                        "subtitle": "Today, SAP News",
+                        "state": "Failed",
+                        "tooltip": "NewsTile 2 of SlideTile 2"
                     }
-                ],
-                slideTile4: [
-                    {
-                        "backgroundImage": "/assets/images/slide4.png",
-                        "contentText": "Style 4",
-                        "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
-                        "state": "",
-                        "tooltip": ""
-                    }
-                ],
+                ]
             });
             this.getView().setModel(oModel);
         },
