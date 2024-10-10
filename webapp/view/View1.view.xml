@@ -1,6 +1,7 @@
 <mvc:View
     xmlns:upload="sap.m.upload"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m"
     controllerName="project1.controller.View1"
     displayBlock="true"
@@ -62,6 +63,17 @@
                             text="Select a new template for your slide deck."
                             class="sapUiSmallMarginBottom"
                         />
+                        <FormattedText htmlText="{/Slide3_start}" />
+                        <Select
+                                width="300px"
+                                wrapItemsText="true"
+                                items="{
+                                    path: '/templates',
+                                    sorter: { path: 'value' }
+                                }">
+                            <core:Item key="{key}" text="{value}" />
+                        </Select>
+                        <FormattedText htmlText="{/Slide3_end}" />
                     </VBox>
                     <SlideTile
                         id="slideTile1"
@@ -128,9 +140,9 @@
                         tiles="{/slideTile3}"
                         scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
                         tooltip="SlideTile 3"
-                        press="pressSlideTile"
                         class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
                         sizeBehavior="{/sizeBehavior}"
+                        press="onTilePress"
                     >
                         <GenericTile
                             id="tile8"
@@ -138,12 +150,14 @@
                             state="{=${state} || 'Loaded'}"
                             tooltip="{tooltip}"
                             frameType="TwoByOne"
-                            press="press"
                             sizeBehavior="{/sizeBehavior}"
+                            press="onTilePress"
                         >
                             <TileContent
                                 id="_IDGenTileContent3"
                                 footer="{footer}"
+                                contentText="{contentText}"
+                                subheader="{subtitle}"
                             >
                                 <NewsContent
                                     id="_IDGenNewsContent3"
@@ -158,7 +172,7 @@
                         tiles="{/slideTile4}"
                         scope="{=${/scope} === 'Actions' ? 'Actions' : 'Display'}"
                         tooltip="SlideTile 4"
-                        press="pressSlideTile"
+                        press="onTilePress"
                         class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
                         sizeBehavior="{/sizeBehavior}"
                     >
@@ -201,7 +215,7 @@
 
                             <PDFViewer
                                 id="_IDGenPDFViewer"
-                                source="https://port8080-workspaces-ws-zvkv2.us10.trial.applicationstudio.cloud.sap/upload/Envases_Assessment.pdf"
+                                source="/upload/Envases_Assessment.pdf"
                                 isTrustedSource="true"
                                 height="800px"
                                 width="100%"

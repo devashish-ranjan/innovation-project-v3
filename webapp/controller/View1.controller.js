@@ -13,7 +13,87 @@ sap.ui.define([
             this._selectedTileId = null;
             var oModelTile = new JSONModel(sap.ui.require.toUrl("sap/m/sample/GenericTileLineMode/tiles.json"));
             this.getView().setModel(oModelTile);
-            var oModel = new JSONModel({
+            var oModel = new JSONModel({ 
+                    "ProductCollection": [
+                        {
+                            "ProductId": "HT-1001",
+                            "Name": "Select option 1"
+                        },
+                        {
+                            "ProductId": "HT-1002",
+                            "Name": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                        },
+                        {
+                            "ProductId": "HT-1003",
+                            "Name": "Select option 3"
+                        },
+                        {
+                            "ProductId": "HT-1007",
+                            "Name": "Select option 4"
+                        },
+                        {
+                            "ProductId": "HT-1010",
+                            "Name": "Select option 5"
+                        }
+                    ],
+                    "templates": [
+                        {
+                            "key": "SAP",
+                            "value": "SAP"
+                        },
+                        {
+                            "key": "SAP BTP",
+                            "value": "SAP BTP"
+                        },
+                        {
+                            "key": "SAP LeanIX",
+                            "value": "SAP LeanIX"
+                        },
+                        {
+                            "key": "SAP Ariba",
+                            "value": "SAP Ariba"
+                        },
+                        {
+                            "key": "SAP Concur",
+                            "value": "SAP Concur"
+                        },
+                        {
+                            "key": "SAP Customer Experience",
+                            "value": "SAP Customer Experience"
+                        },
+                        {
+                            "key": "SAP Fieldglass",
+                            "value": "SAP Fieldglass"
+                        },
+                        {
+                            "key": "SAP Signavio",
+                            "value": "SAP Signavio"
+                        },
+                        {
+                            "key": "SAP Successfactors",
+                            "value": "SAP Successfactors"
+                        },
+                        {
+                            "key": "SAP ChinaSimplified",
+                            "value": "SAP ChinaSimplified"
+                        },
+                        {
+                            "key": "SAP ChinaTraditional",
+                            "value": "SAP ChinaTraditional"
+                        },
+                        {
+                            "key": "SAP BusinessNetwork",
+                            "value": "SAP BusinessNetwork"
+                        },
+                        {
+                            "key": "SAP S4HANA",
+                            "value": "SAP S4HANA"
+                        },
+                        {
+                            "key": "SAP S4HANACloud",
+                            "value": "SAP S4HANACloud"
+                        }
+                    ],
                 Slide4: "<body>Here’s a preview of how your slide deck will look with the new SAP-compliant template. You can:" +
                     "<ul>" +
                     "<li><strong>Navigate Slides:</strong> Use the arrows to preview each slide.</li>" +
@@ -31,6 +111,10 @@ sap.ui.define([
                     "</ol>" +
                     "<p><strong>Note:</strong> Ensure that your slide deck is compatible with PowerPoint format (PPTX, PowerPoint 2007 and later).</p>",
                 Slide2: "<p><strong>Instructions:</strong> Please upload the slide deck you want to migrate. The tool accepts PowerPoint format (PPTX, PowerPoint 2007 and later).</p>",
+                Slide3_start:   "<p><strong>Instructions:</strong> Select the new SAP-compliant template you wish to apply to your slide deck. This template will determine the overall look and feel of your presentation, including fonts, colours, and layout.</p>" +
+                          "<p><strong>Step 1:</strong> Choose the PowerPoint SAP-compliant template.</p>",
+                Slide3_end: "<select><option value='SAP'>SAP</option></select>" + // Example dropdown for simplicity
+                            "<p><strong>Step 2:</strong> Choose the style settings which will affect the overall look and feel of your presentation, including fonts and colours.</p>",
                 Slide5: "<p>Instructions: Your slide deck and detailed compliance report is ready! You can now download it in the following formats:</p>" +
                     "<ul>" +
                     "<li><strong>Download Options:</strong> PowerPoint (.PPTX), PDF</li>" +
@@ -77,8 +161,8 @@ sap.ui.define([
                                 "active": false
                             },
                             {
-                                "title": "Info:",
-                                "text": "Complient ",
+                                "title": "Info",
+                                "text": "Compliant Presentation",
                                 "state": "Information"
                             }
                         ],
@@ -92,7 +176,7 @@ sap.ui.define([
                         "statuses": [
                             {
                                 "title": "Uploaded By",
-                                "text": "Jane Burns",
+                                "text": "SAP",
                                 "active": true
                             },
                             {
@@ -106,8 +190,8 @@ sap.ui.define([
                                 "active": false
                             },
                             {
-                                "title": "Document Info Record",
-                                "text": "SSP/101010101",
+                                "title": "Info",
+                                "text": "Report including the changes being done and changes not done.",
                                 "state": "Information"
                             }
                         ]
@@ -133,121 +217,31 @@ sap.ui.define([
                         "text": "ActionRemove"
                     }
                 ],
-                tiles: [
-                    {
-                        "title": "Jessica Danielle Johnson ",
-                        "subtitle": "Senior Consultant, Department Sales & Distribution",
-                        "footer": "Current Quarter",
-                        "unit": "EUR",
-                        "kpivalue": 12,
-                        "scale": "k",
-                        "color": "Good",
-                        "trend": "Up"
-                    },
-                    {
-                        "title": "Manage Master Data Type Activity With a Long Title and Without an Icon",
-                        "subtitle": "Subtitle for Activity",
-                        "footer": "Current Quarter",
-                        "unit": "EUR",
-                        "kpivalue": 5,
-                        "scale": "",
-                        "color": "Critical",
-                        "trend": "Down"
-                    },
-                    {
-                        "title": "Business Decisions",
-                        "subtitle": "Approval Needed",
-                        "footer": "Current Quarter",
-                        "unit": "EUR",
-                        "kpivalue": 12,
-                        "scale": "",
-                        "state": "Loading",
-                        "color": "Critical",
-                        "trend": "Down"
-                    },
-                    {
-                        "title": "Manage Assets",
-                        "subtitle": "",
-                        "footer": "",
-                        "kpivalue": 500,
-                        "scale": "",
-                        "color": "Error",
-                        "trend": "Up",
-                        "state": "Failed"
-                    },
-                    {
-                        "title": "Manage Invoices",
-                        "subtitle": "Payment Open",
-                        "footer": "",
-                        "kpivalue": 1,
-                        "scale": "k",
-                        "color": "Critical",
-                        "trend": "Down",
-                        "state": "Disabled"
-                    }
-                ],
-                linkTiles: [
-                    {
-                        "title": "Jessica Danielle Johnson",
-                        "linkTileContents": [
-                            {
-                                "iconSrc": "sap-icon://action-settings",
-                                "linkText": "SAP",
-                                "linkHref": "http://www.sap.com"
-                            },
-                            {
-                                "iconSrc": "sap-icon://action-settings",
-                                "linkText": "SAP",
-                                "linkHref": "http://www.sap.com"
-                            },
-                            {
-                                "iconSrc": "sap-icon://action-settings",
-                                "linkText": "SAP",
-                                "linkHref": "http://www.sap.com"
-                            },
-                            {
-                                "iconSrc": "sap-icon://action-settings",
-                                "linkText": "SAP",
-                                "linkHref": "http://www.sap.com"
-                            },
-                            {
-                                "iconSrc": "sap-icon://action-settings",
-                                "linkText": "SAP",
-                                "linkHref": "http://www.sap.com"
-                            },
-                            {
-                                "iconSrc": "sap-icon://action-settings",
-                                "linkText": "SAP",
-                                "linkHref": "http://www.sap.com"
-                            }
-                        ]
-                    }
-                ],
                 slideTile1: [
                     {
-                        "backgroundImage": "https://port8080-workspaces-ws-5bnd8.us10.trial.applicationstudio.cloud.sap/assets/images/slide1.png",
+                        "backgroundImage": "/assets/images/slide1.png",
                         "contentText": "Style 1",
                         "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
                         "state": "",
-                        "tooltip": ""
+                        "tooltip": "Style 1"
                     }
                 ],
                 slideTile2: [
                     {
-                        "backgroundImage": "https://port8080-workspaces-ws-5bnd8.us10.trial.applicationstudio.cloud.sap/assets/images/slide2.png",
+                        "backgroundImage": "/assets/images/slide2.png",
                         "contentText": "Style 2",
                         "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
                         "state": "",
-                        "tooltip": ""
+                        "tooltip": "Style 2"
                     }
                 ],
                 slideTile3: [
                     {
-                        "backgroundImage": "https://port8080-workspaces-ws-5bnd8.us10.trial.applicationstudio.cloud.sap/assets/images/slide3.png",
+                        "backgroundImage": "/assets/images/slide3.png",
                         "contentText": "Style 3",
                         "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
                         "state": "",
-                        "tooltip": ""
+                        "tooltip": "Style 3"
                     }
                 ],
                 slideTile4: [
@@ -256,12 +250,16 @@ sap.ui.define([
                         "contentText": "Style 4",
                         "subtitle": "<p style='color: #556B82'><strong>Font: </strong>72 Brand<br><strong>Colour Scheme:</strong> Blue</p>",
                         "state": "",
-                        "tooltip": ""
+                        "tooltip": "Style 4"
                     }
                 ],
             });
             this.getView().setModel(oModel);
         },
+        onTemplateSelect: function(oEvent) {
+            var sKey = oEvent.getParameter("selectedItem").getKey();
+            // Handle the selection change, e.g., update another model or trigger some UI changes
+        },        
 
         onStartPress: function () {
             this._oWizard.nextStep();
@@ -303,7 +301,7 @@ sap.ui.define([
         onUploadComplete: function (oEvent) {
             var oItem = oEvent.getParameter("item");
             var sFileName = oItem.getFileName();
-            var sUrl = "https://port8080-workspaces-ws-zvkv2.us10.trial.applicationstudio.cloud.sap/upload"; // Ensure this is pointing to your backend server
+            var sUrl = "/upload"; // Ensure this is pointing to your backend server
 
             var oRequest = new XMLHttpRequest();
             oRequest.open("POST", sUrl, true);  // Ensure the request is opened properly
@@ -353,6 +351,9 @@ sap.ui.define([
             this.byId("backButton").setVisible(iCurrentStep > 0);
             this.byId("nextButton").setVisible(iCurrentStep < iTotalSteps);
             this.byId("finishButton").setVisible(iCurrentStep === iTotalSteps);
+        },
+        pressSlideTile: function(oEvent) {
+            MessageToast.show("The generic tile two pressed.");
         },
         onFinishPress: function () {
             MessageToast.show("Migration finished.");
@@ -406,7 +407,7 @@ sap.ui.define([
             // Check if the current step allows tile selection
             if (this._canSelectTiles()) {
                 var oSelectedTile = oEvent.getSource();
-                var aTiles = this.byId("TileButtons").getItems();
+                var aTiles = this.byId("slideTile").getItems();
 
                 // Deselect all tiles
                 aTiles.forEach(function (oTile) {
@@ -415,6 +416,9 @@ sap.ui.define([
 
                 // Highlight the selected tile
                 oSelectedTile.addStyleClass("selectedTile");
+
+                MessageToast.show("Tile selection");
+
             } else {
                 MessageToast.show("Tile selection is not allowed in this step.");
             }

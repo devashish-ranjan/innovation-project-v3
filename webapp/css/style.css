@@ -53,9 +53,14 @@
     opacity: 0.5; /* Make disabled tiles look faded */
 }
 
+.sapMGT.TwoByOne {
+    width: 22.5rem;
+    height: 12.5rem;
+}
+
 .sapMST.TwoByOne {
     width: 22.5rem;
-    height: 16rem;
+    height: 18rem;
 }
 
 .sapMGTHdrContent {
@@ -64,3 +69,4 @@
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
